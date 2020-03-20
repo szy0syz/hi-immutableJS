@@ -34,3 +34,44 @@ const u2 = u1.update(1, x => x + 100);
 // clear 清空并返回一个长度为0的新数组
 
 // push pop unshift shift 同数组方法
+
+// setSize 重新设定数组涨肚，小于原数组长度会被截断，大于原数组会用undefined进行填充
+const set1 = List([1, 2, 3, 4, 5]);
+const set2 = set1.setSize(2); // -> [1,2]
+
+// setIn() 用来设定嵌套结构的值 ([第一层下标，第二层下标, ...第N层下标], 值);
+// arrx.setIn(["a", "b", "c"], 888);
+
+// concat 链接List
+const cl1 = List([1, 2]);
+const cl2 = List([3, 4, 5]);
+const cl3 = List([6]);
+
+console.log('concat', cl1.concat(cl2, cl3));
+
+// merge 是 concat 的别名
+
+// map 通原生的 map，循环并返回 [新的数组]
+
+// fliter 同元素filter，循环并过滤后返回 [新的数组]
+
+// flatten 扁平化这个 list
+// flatten(param) 参数是数组内嵌层数 或者 false 不定
+
+// find 查找第一个符合的结果
+// findLast 返回最后一个符合的结果
+
+// keys 返回所有的下标
+// values 返回所有的值
+// entries 返回所有 entry
+
+// groupBy 分组
+const peoples = List([
+  { sex: 'male', name: 'aaa' },
+  { sex: 'male', name: 'bbb' },
+  { sex: 'male', name: 'ccc' },
+  { sex: 'demale', name: 'ddd' },
+]);
+// 返回的是 List 对象
+const gp = peoples.groupBy(x => x.sex);
+console.log(gp);
